@@ -1,6 +1,6 @@
 <?php
 
-    mysql_connect("localhost","root","");
-    mysql_select_db("paginacion_db");
+    mysqli_connect("localhost","root","123456");
+    mysqli_select_db("NTCSerie22");
 
 ?>

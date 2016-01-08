@@ -7,13 +7,13 @@
  *      Nombre de 
  *      Archivo         :               PHPPaging.lib.php
  *
- *      Autor           :               Marco A. MadueÒo MejÌa <mmadueno@phperu.net>
+ *      Autor           :               Marco A. Madue√±o Mej√≠a <mmadueno@phperu.net>
  *
  *      Version         :               2.1
  *
  *      Descripcion     :               PHPPaging es una clase basada en PHP, y opcionalmente MySQL, que recibe
- *                                              una serie de datos y los procesa para asÌ lograr un paginado de Èstos.
- *                                              Es altamente personalizable, y su configuraciÛn no requiere de conocimientos
+ *                                              una serie de datos y los procesa para as√≠ lograr un paginado de √©stos.
+ *                                              Es altamente personalizable, y su configuraci√≥n no requiere de conocimientos
  *                                              avanzados sobre PHP.
  *
  *      URL                     :               http://phppaging.phperu.net
@@ -22,8 +22,8 @@
  *
  *****************************************************************************************************
  *
- *     PHPPaging - PaginaciÛn en PHP/MySQL
- *     Copyright (C) 2008  Marco A. MadueÒo MejÌa
+ *     PHPPaging - Paginaci√≥n en PHP/MySQL
+ *     Copyright (C) 2008  Marco A. Madue√±o Mej√≠a
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -46,11 +46,11 @@ class PHPPaging {
         
 		
         /**
-        *       N˙mero de elementos por p·gina
+        *       N√∫mero de elementos por p√°gina
         *
         *       Valor por default: 5
         *
-        *       N˙mero de elementos que ser· mostrado por p·gina. Puede ser definido en el script
+        *       N√∫mero de elementos que ser√° mostrado por p√°gina. Puede ser definido en el script
         *       mediante la funcion porPagina()
         *
         *       <code>
@@ -61,11 +61,11 @@ class PHPPaging {
         var $porPagina = 5;
         
         /**
-        *       N˙mero de p·ginas anteriores a la actual a las que se mostrar· un link directo
+        *       N√∫mero de p√°ginas anteriores a la actual a las que se mostrar√° un link directo
         *
         *       Valor por default: 3
         *
-        *       En barra de links, n˙mero de p·ginas anteriores a la actual a mostrar. Puede ser 
+        *       En barra de links, n√∫mero de p√°ginas anteriores a la actual a mostrar. Puede ser 
         *       definido en el script mediante la funcion paginasAntes()
         *
         *       <code>
@@ -76,11 +76,11 @@ class PHPPaging {
         var $paginasAntes = 4;
         
         /**
-        *       N˙mero de p·ginas posteriores a la actual a las que se mostrar· un link directo
+        *       N√∫mero de p√°ginas posteriores a la actual a las que se mostrar√° un link directo
         *
         *       Valor por default: 3
         *
-        *       En barra de links, n˙mero de p·ginas posteriores a la actual a mostrar. Puede ser
+        *       En barra de links, n√∫mero de p√°ginas posteriores a la actual a mostrar. Puede ser
         *       definido en el script mediante la funcion paginasDespues()
         *
         *       <code>
@@ -95,7 +95,7 @@ class PHPPaging {
         *
         *       Valor por default: NULL
         *
-        *       Estilo (clase) que se usar· en la barra de links. Puede ser definido en el script 
+        *       Estilo (clase) que se usar√° en la barra de links. Puede ser definido en el script 
         *       mediante la funcion linkClase()
         *
         *       <code>
@@ -110,7 +110,7 @@ class PHPPaging {
         *
         *       Valor por default: "&nbsp;"
         *
-        *       Separador que se usara en la barra de links, entre p·gina y p·gina. 
+        *       Separador que se usara en la barra de links, entre p√°gina y p√°gina. 
         *       Puede ser definido en el script mediante la funcion linkSeparador()
         *
         *       <code>
@@ -126,7 +126,7 @@ class PHPPaging {
         *       Valor por default: "&nbsp;"
         *
         *       Separador que se usara en la barra de links, cuando se ha definido
-        *       un salto de p·ginas
+        *       un salto de p√°ginas
         *
         *       <code>
         *       var $linkSeparador = " - ";
@@ -137,11 +137,11 @@ class PHPPaging {
         var $linkSeparadorEspecial = "&nbsp;";
         
         /**
-        *       Cadena que se agregar· al final de cada link
+        *       Cadena que se agregar√° al final de cada link
         *
         *       Valor por default: NULL
         *
-        *       AÒadido que ser· agregado al final de cada link. Puede ser definido en el
+        *       A√±adido que ser√° agregado al final de cada link. Puede ser definido en el
         *       script mediante la funcion linkAgregar()
         *
         *       <code>
@@ -155,60 +155,60 @@ class PHPPaging {
         /**
         *       Mensaje para el atributo <i>title</i> de los links
         *
-        *       Valor por default: Seg˙n el tipo de link
+        *       Valor por default: Seg√∫n el tipo de link
         *
         *       Mensaje a mostrar cuando el mouse es colocado sobre los links. Puede ser definido
         *       en el script mediante la funcion linkTitulo(). El mensaje debe estar en formato: 
         *       XXXX %1$s XXXX %2$s XXXX %3$s XXXX %4$s XXXX. Los caracteres %n$s seran reemplazados 
-        *   seg˙n el n˙mero por:
-        *               - %1$s = N˙mero de p·gina
+        *   seg√∫n el n√∫mero por:
+        *               - %1$s = N√∫mero de p√°gina
         *               - %2$s = Primer resultado mostrado
-        *               - %3$s = ⁄ltimo Resultado mostrado
+        *               - %3$s = √öltimo Resultado mostrado
         *               - %4$s = Total de resultados de la BD
         *
         *       <code>
-        *       var $linkTitulo = "Resultados del %2\$s al %3\$s de %4\$s encontrados (P·gina %1\$s)";
+        *       var $linkTitulo = "Resultados del %2\$s al %3\$s de %4\$s encontrados (P√°gina %1\$s)";
         *       </code>
         *       Podria ser reemplazado por:
-        *       "Resultados del 13 al 18 de 127 encontrados (P·gina 3)"
+        *       "Resultados del 13 al 18 de 127 encontrados (P√°gina 3)"
         *       @var string
         **/
         var $linkTitulo = true;
         
         /**
-        *       Cadena que se mostrar· en el link hacia la PRIMERA p·gina
+        *       Cadena que se mostrar√° en el link hacia la PRIMERA p√°gina
         *
         *       Valor por default: "&laquo; Primera"
         *
-        *       Cadena de texto que se mostrar· en el enlace hacia la primera p·gina.
+        *       Cadena de texto que se mostrar√° en el enlace hacia la primera p√°gina.
         *
         *       <code>
-        *       var $mostrarPrimera = "- Ir a la primera p·gina";
+        *       var $mostrarPrimera = "- Ir a la primera p√°gina";
         *       </code>
         *       @var string
         **/
         var $mostrarPrimera = "&laquo; Primera";
         
         /**
-        *       Cadena que se mostrar· en el link hacia la ⁄LTIMA p·gina
+        *       Cadena que se mostrar√° en el link hacia la √öLTIMA p√°gina
         *
-        *       Valor por default: "⁄ltima &raquo;"
+        *       Valor por default: "√öltima &raquo;"
         *
-        *       Cadena de texto que se mostrar· en el enlace hacia la ˙ltima p·gina.
+        *       Cadena de texto que se mostrar√° en el enlace hacia la √∫ltima p√°gina.
         *
         *       <code>
-        *       var $mostrarPrimera = "Ir a la ˙ltima p·gina -";
+        *       var $mostrarPrimera = "Ir a la √∫ltima p√°gina -";
         *       </code>
         *       @var string
         **/
-        var $mostrarUltima = "⁄ltima &raquo;";
+        var $mostrarUltima = "√öltima &raquo;";
         
         /**
-        *       Cadena que se mostrar· en el link hacia la p·gina ANTERIOR
+        *       Cadena que se mostrar√° en el link hacia la p√°gina ANTERIOR
         *
         *       Valor por default: "&lt; Anterior"
         *
-        *       Cadena de texto que se mostrar· en el enlace hacia la p·gina anterior
+        *       Cadena de texto que se mostrar√° en el enlace hacia la p√°gina anterior
         *
         *       <code>
         *       var $mostrarAnterior = "Anterior";
@@ -218,11 +218,11 @@ class PHPPaging {
         var $mostrarAnterior = "&lt; Anterior";
         
         /**
-        *       Cadena que se mostrar· en el link hacia la p·gina SIGUIENTE
+        *       Cadena que se mostrar√° en el link hacia la p√°gina SIGUIENTE
         *
         *       Valor por default: "Siguiente &gt;"
         *
-        *       Cadena de texto que se mostrar· en el enlace hacia la p·gina siguiente
+        *       Cadena de texto que se mostrar√° en el enlace hacia la p√°gina siguiente
         *
         *       <code>
         *       var $mostrarSiguiente = "Siguiente";
@@ -232,13 +232,13 @@ class PHPPaging {
         var $mostrarSiguiente = "Siguiente &gt;";
         
         /**
-        *       Cadena que se mostrar· en el link hacia las p·ginas accesibles en barra de links
+        *       Cadena que se mostrar√° en el link hacia las p√°ginas accesibles en barra de links
         *
         *       Valor por default: "{n}"
         *
-        *       Cadena de texto que se mostrar· para indicar las p·ginas a las que se puede
-        *       acceder desde la barra de links, y que SÕ SER¡N LINKS. El lugar donde se desea 
-        *       que vaya el n˙mero de p·gina se debe indicar por medio del caracter {n}.
+        *       Cadena de texto que se mostrar√° para indicar las p√°ginas a las que se puede
+        *       acceder desde la barra de links, y que S√ç SER√ÅN LINKS. El lugar donde se desea 
+        *       que vaya el n√∫mero de p√°gina se debe indicar por medio del caracter {n}.
         *
         *       <code>
         *       var $mostrarAdyacentes = "Ir a la p. {n}";
@@ -248,16 +248,16 @@ class PHPPaging {
         var $mostrarAdyacentes = "{n}";
         
         /**
-        *       Cadena que se mostrar· en vez del link hacia la p·gina ACTUAL
+        *       Cadena que se mostrar√° en vez del link hacia la p√°gina ACTUAL
         *
         *       Valor por default: "{n}"
         *
-        *       Cadena de texto que se mostrar· para indicar la p·gina actual, que estar· en 
-        *       la barra de links, pero NO SER¡ UN LINK. El lugar donde se desea que vaya el
-        *       n˙mero de p·gina se debe indicar por medio del caracter {n}.
+        *       Cadena de texto que se mostrar√° para indicar la p√°gina actual, que estar√° en 
+        *       la barra de links, pero NO SER√Å UN LINK. El lugar donde se desea que vaya el
+        *       n√∫mero de p√°gina se debe indicar por medio del caracter {n}.
         *
         *       <code>
-        *       var $mostrarActual = "P·gina <b>{n}</b>";
+        *       var $mostrarActual = "P√°gina <b>{n}</b>";
         *       </code>
         *       @var string
         **/
@@ -268,8 +268,8 @@ class PHPPaging {
         *
         *       Valor por default: "page"
         *
-        *       Cadena de texto que representar· el nombre de la variable que define
-        *   el n˙mero de p·gina en la url
+        *       Cadena de texto que representar√° el nombre de la variable que define
+        *   el n√∫mero de p√°gina en la url
         *
         *       <code>
         *       var $nombreVariable = "p";
@@ -284,10 +284,10 @@ class PHPPaging {
         *       Valor por default: NULL
         *
         *       Se puede definir una estrutura personalizada para generar los links en
-        *   la barra de navegaciÛn. Esto es especialmente ˙til cuando se usa "URLs
-        *       amigables". Si no se define, el n˙mero de p·gina se propaga por la URL
+        *   la barra de navegaci√≥n. Esto es especialmente √∫til cuando se usa "URLs
+        *       amigables". Si no se define, el n√∫mero de p√°gina se propaga por la URL
         *       de esta forma: pagina.php?page=4. En la estructura que usted coloque
-        *       el lugar donde debe ponerse el n˙mero de p·gina debe ir indicado como
+        *       el lugar donde debe ponerse el n√∫mero de p√°gina debe ir indicado como
         *       %1$s
         *
         *       <code>
@@ -304,10 +304,10 @@ class PHPPaging {
         *
         *       Valor por default: NULL
         *
-        *       Especifique cu·les de las variables definidas en la URL desea propagar
-        *       y mantener en los links de la barra de navegaciÛn. La variable que 
-        *       propaga el n˙mero de p·gina es incluÌda siempre autom·ticamente. Esta 
-        *       opciÛn sÛlo funciona si NO se ha establecido una estructura personalizada
+        *       Especifique cu√°les de las variables definidas en la URL desea propagar
+        *       y mantener en los links de la barra de navegaci√≥n. La variable que 
+        *       propaga el n√∫mero de p√°gina es inclu√≠da siempre autom√°ticamente. Esta 
+        *       opci√≥n s√≥lo funciona si NO se ha establecido una estructura personalizada
         *       para la URL
         *
         *       <code>
@@ -323,10 +323,10 @@ class PHPPaging {
         *
         *       Valor por default: NULL
         *
-        *       Especifique cu·les de las variables definidas en la URL no desea propagar
-        *       ni mantener en los links de la barra de navegaciÛn. La variable que 
-        *       propaga el n˙mero de p·gina siempre se incluye en la URL
-        *       autom·ticamente. Esta opciÛn sÛlo funciona si NO se ha establecido una 
+        *       Especifique cu√°les de las variables definidas en la URL no desea propagar
+        *       ni mantener en los links de la barra de navegaci√≥n. La variable que 
+        *       propaga el n√∫mero de p√°gina siempre se incluye en la URL
+        *       autom√°ticamente. Esta opci√≥n s√≥lo funciona si NO se ha establecido una 
         *       estructura personalizada para la URL
         *
         *       <code>
@@ -338,11 +338,11 @@ class PHPPaging {
         var $quitarURLVar = array();
 
         /**
-        *       Modo de ejecuciÛn del script
+        *       Modo de ejecuci√≥n del script
         *
         *       Valor por default: 'reporte'
         *
-        *       Indica el modo de ejecuciÛn del script. 
+        *       Indica el modo de ejecuci√≥n del script. 
         *
         *       <code>
         *       var $modo = 'publicacion'; 
@@ -466,14 +466,14 @@ class PHPPaging {
                 $modo = trim($modo);
                 $modo = strtolower($modo);
                 if(in_array($modo, $modos)) $this->modo = $modo;
-                else return $this->error(true, "No se pudo cambiar el modo de ejecuciÛn pues ingresÛ uno que no existe o que es inv·lido.");
+                else return $this->error(true, "No se pudo cambiar el modo de ejecuci√≥n pues ingres√≥ uno que no existe o que es inv√°lido.");
                 return true;
         }
         
         /**
-        *       Activar recepciÛn de datos POST
+        *       Activar recepci√≥n de datos POST
         *
-        *       Activar o desactivar la recepciÛn de datos por POST
+        *       Activar o desactivar la recepci√≥n de datos por POST
         *       @param array $boolean Array que contiene los datos a paginar
         *       @returns void
         *       @version 2.0
@@ -491,49 +491,49 @@ class PHPPaging {
         *       @returns void
         **/
         function agregarArray ($input) {
-                if (!is_array($input)) return $this->error(true, "El arreglo de datos ingresado no es v·lido. Recuerde que debe indicar una variable de tipo array.");
+                if (!is_array($input)) return $this->error(true, "El arreglo de datos ingresado no es v√°lido. Recuerde que debe indicar una variable de tipo array.");
                 $this->data = (array)$input;
                 return true;
         }
         
         /**
-        *       Consulta SQL para obtener los datos para el paginado. La consulta no deber· especificar lÌmites
-    *   pues de eso se encargar· el script      
+        *       Consulta SQL para obtener los datos para el paginado. La consulta no deber√° especificar l√≠mites
+    *   pues de eso se encargar√° el script      
         *
-        *       Define una consulta SQL en base a la cual se realizar· el paginado
+        *       Define una consulta SQL en base a la cual se realizar√° el paginado
         *       @param string $sql Una consulta SQL estandar. La consulta no debe terminar con punto y coma.    
         *       @returns bool
         **/
         function agregarConsulta ($sql) {
-                if (empty($sql)) return $this->error(true, "La consulta SQL que est· indicando est· vacÌa.");
+                if (empty($sql)) return $this->error(true, "La consulta SQL que est√° indicando est√° vac√≠a.");
                 $this->sql = $sql;
                 return true;
         }
         
         /**
-        *       N˙mero de elementos por p·gina
+        *       N√∫mero de elementos por p√°gina
         *
-        *       Define el n˙mero de registros que ser·n mostrados en cada p·gina
-        *       @param number $num N˙mero de registros por p·gina que se usar·
+        *       Define el n√∫mero de registros que ser√°n mostrados en cada p√°gina
+        *       @param number $num N√∫mero de registros por p√°gina que se usar√°
         *       @returns bool
         **/
         function porPagina ($num) {
                 if (is_numeric($num) and $num >= 1 and $num !== true) $this->porPagina = intval($num);
-                else return $this->error(true, "El n˙mero de elementos por p·gina indicado es inv·lido. SÛlo puede poner n˙meros enteros mayores o iguales a 1.");
+                else return $this->error(true, "El n√∫mero de elementos por p√°gina indicado es inv√°lido. S√≥lo puede poner n√∫meros enteros mayores o iguales a 1.");
                 return true;
         }
         
         /**
         *       Nombre de variable en la URL
         *
-        *       Define el nombre de la variable de url que indicar· el n˙mero de p·gina
+        *       Define el nombre de la variable de url que indicar√° el n√∫mero de p√°gina
         *       @param string $var Nombre de la variable de url
         *       @returns bool
         **/
         function nombreVariable ($var) {
-                if(!is_string($var) or empty($var)) return $this->error(true, "El nombre de variable indicado est· vacÌo o es inv·lido.");
+                if(!is_string($var) or empty($var)) return $this->error(true, "El nombre de variable indicado est√° vac√≠o o es inv√°lido.");
 				
-if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre de la variable indicado contiene caracteres no v·lidos");
+if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre de la variable indicado contiene caracteres no v√°lidos");
 
 				
                 $this->nombreVariable = (string)$var; 
@@ -541,46 +541,46 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         }
         
         /**
-        *       N˙mero de p·ginas anteriores a la actual a las que se mostrar· un link directo
+        *       N√∫mero de p√°ginas anteriores a la actual a las que se mostrar√° un link directo
         *
-        *       Define el n˙mero de links a p·ginas anteriores a la actual que ser·n mostrados en
+        *       Define el n√∫mero de links a p√°ginas anteriores a la actual que ser√°n mostrados en
         *       la barra de links
-        *       @param number $num N˙mero de p·ginas anteriores a la actual
+        *       @param number $num N√∫mero de p√°ginas anteriores a la actual
         *       @returns bool
         **/
-        function paginasAntes () { // FunciÛn modificada version 2.0
+        function paginasAntes () { // Funci√≥n modificada version 2.0
                 $n = func_get_args();
                 $num = array_shift($n);
                 if (is_numeric($num) and $num >= 1 and $num !== true) $this->paginasAntes = intval($num);
                 elseif($num === false or $num === '' or $num === 0 or $num === '0' or $num === null) $this->paginasAntes = false; // version 2.0
-                else return $this->error(true, "El n˙mero indicado en el mÈtodo paginasAntes() es inv·lido");
+                else return $this->error(true, "El n√∫mero indicado en el m√©todo paginasAntes() es inv√°lido");
                 if(count($n) > 0) {
                         foreach($n as $numero) {
                                 if(is_numeric($numero) and $numero > 0) $this->paginasAntesEspecial[] = intval($numero);
-                                elseif($this->modo == 'desarrollo') return $this->error(true, "Los par·metros del mÈtodo paginasAntes() deben ser todos n˙meros");
+                                elseif($this->modo == 'desarrollo') return $this->error(true, "Los par√°metros del m√©todo paginasAntes() deben ser todos n√∫meros");
                         }
                 }
                 return true;
         }
         
         /**
-        *       N˙mero de p·ginas posteriores a la actual a las que se mostrar· un link directo
+        *       N√∫mero de p√°ginas posteriores a la actual a las que se mostrar√° un link directo
         *
-        *       Define el n˙mero de links a p·ginas posteriores a la actual que ser·n mostrados en
+        *       Define el n√∫mero de links a p√°ginas posteriores a la actual que ser√°n mostrados en
         *       la barra de links
-        *       @param number $num N˙mero de p·ginas posteriores a la actual
+        *       @param number $num N√∫mero de p√°ginas posteriores a la actual
         *       @returns bool
         **/
-        function paginasDespues () { // FunciÛn modificada version 2.0
+        function paginasDespues () { // Funci√≥n modificada version 2.0
                 $n = func_get_args();
                 $num = array_shift($n);
                 if (is_numeric($num) and $num >= 1 and $num !== true) $this->paginasDespues = intval($num);
                 elseif($num === false or $num === '' or $num === 0 or $num === '0' or $num === null) $this->paginasDespues = false; // version 2.0
-                else return $this->error(true, "El n˙mero indicado en el mÈtodo paginasDespues() es inv·lido");
+                else return $this->error(true, "El n√∫mero indicado en el m√©todo paginasDespues() es inv√°lido");
                 if(count($n) > 0) {
                         foreach($n as $numero) {
                                 if(is_numeric($numero) and $numero > 0) $this->paginasDespuesEspecial[] = intval($numero);
-                                elseif($this->modo == 'desarrollo') return $this->error(true, "Los par·metros del mÈtodo paginasDespues() deben ser todos n˙meros");
+                                elseif($this->modo == 'desarrollo') return $this->error(true, "Los par√°metros del m√©todo paginasDespues() deben ser todos n√∫meros");
                         }
                 }
                 return true;
@@ -589,22 +589,22 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         /**
         *       Separador para la barra de links
         *
-        *       Define el separador que se usar· entre cada link en la barra de links
+        *       Define el separador que se usar√° entre cada link en la barra de links
         *       @param string $separador Separador entre links
         *       @returns void
         **/
         function linkSeparador ($separador = '', $convertir = false) {
                 if($separador === false or $separador === null or $separador === '') $this->linkSeparador = '';
                 if($separador === true) $this->linkSeparador = 1;
-                if($separador === 0 or $separador === '0') $this->linkSeparador = (string)'0'; // Arreglado v2.1 (Gracias a CuauhtÈmoc)
+                if($separador === 0 or $separador === '0') $this->linkSeparador = (string)'0'; // Arreglado v2.1 (Gracias a Cuauht√©moc)
                 else $this->linkSeparador = ($convertir == true) ? htmlentities((string)$separador, ENT_QUOTES) : (string)$separador;
         }
   
         /**
         *       Separador "especial"para la barra de links
         *
-        *       Define el separador que se usar· entre los links "especiales" de la
-        *       barra de navegaciÛn
+        *       Define el separador que se usar√° entre los links "especiales" de la
+        *       barra de navegaci√≥n
         *       @param string $separador Separador
         *       @returns void
         *       @version 2.0
@@ -617,9 +617,9 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         }
   
         /**
-        *       Cadena que se mostrar· en el link hacia la PRIMERA p·gina
+        *       Cadena que se mostrar√° en el link hacia la PRIMERA p√°gina
         *
-        *       Define la cadena que ser· mostrada en el enlace hacia la primera p·gina
+        *       Define la cadena que ser√° mostrada en el enlace hacia la primera p√°gina
         *       @param string $str Cadena a mostrar
         *       @returns void
         **/
@@ -627,14 +627,14 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                 if($str === false or $str === null or $str === '') $this->mostrarPrimera = false;
                 elseif($str === 0 or $str === '0') $this->mostrarPrimera = '0';
                 elseif(!empty($str) and $str !== true) $this->mostrarPrimera = ($convertir == true) ? htmlentities((string)$str, ENT_QUOTES) : (string)$str;
-                else return $this->error(true, "El valor indicado en el mÈtodo mostrarPrimera() es inv·lido");
+                else return $this->error(true, "El valor indicado en el m√©todo mostrarPrimera() es inv√°lido");
                 return true;
         }
   
         /**
-        *       Cadena que se mostrar· en el link hacia la ⁄LTIMA p·gina
+        *       Cadena que se mostrar√° en el link hacia la √öLTIMA p√°gina
         *
-        *       Define la cadena que ser· mostrada en el enlace hacia la ˙ltima p·gina
+        *       Define la cadena que ser√° mostrada en el enlace hacia la √∫ltima p√°gina
         *       @param string $str Cadena a mostrar
         *       @returns void
         **/
@@ -643,14 +643,14 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                 if($str === false or $str === null or $str === '') $this->mostrarUltima = false;
                 elseif($str === 0 or $str === '0') $this->mostrarUltima = '0';
                 elseif(!empty($str) and $str !== true) $this->mostrarUltima = ($convertir == true) ? htmlentities((string)$str, ENT_QUOTES) : (string)$str;
-                else return $this->error(true, "El valor indicado en el mÈtodo mostrarUltima() es inv·lido");
+                else return $this->error(true, "El valor indicado en el m√©todo mostrarUltima() es inv√°lido");
                 return true;
         }
   
         /**
-        *       Cadena que se mostrar· en el link hacia la p·gina ANTERIOR
+        *       Cadena que se mostrar√° en el link hacia la p√°gina ANTERIOR
         *
-        *       Define la cadena que ser· mostrada en el enlace hacia la p·gina anterior
+        *       Define la cadena que ser√° mostrada en el enlace hacia la p√°gina anterior
         *       @param string $str Cadena a mostrar
         *       @returns void
         **/
@@ -658,14 +658,14 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                 if($str === false or $str === null or $str === '') $this->mostrarAnterior = false;
                 elseif($str === 0 or $str === '0') $this->mostrarAnterior = '0';
                 elseif(!empty($str) and $str !== true) $this->mostrarAnterior = ($convertir == true) ? htmlentities((string)$str, ENT_QUOTES) : (string)$str;
-                else return $this->error(true, "El valor indicado en el mÈtodo mostrarAnterior() es inv·lido");
+                else return $this->error(true, "El valor indicado en el m√©todo mostrarAnterior() es inv√°lido");
                 return true;
         }
   
         /**
-        *       Cadena que se mostrar· en el link hacia la p·gina SIGUIENTE
+        *       Cadena que se mostrar√° en el link hacia la p√°gina SIGUIENTE
         *
-        *       Define la cadena que ser· mostrada en el enlace hacia la p·gina siguiente
+        *       Define la cadena que ser√° mostrada en el enlace hacia la p√°gina siguiente
         *       @param string $str Cadena a mostrar
         *       @returns void
         **/
@@ -673,15 +673,15 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                 if($str === false or $str === null or $str === '') $this->mostrarSiguiente = false;
                 elseif($str === 0 or $str === '0') $this->mostrarSiguiente = '0';
                 elseif(!empty($str) and $str !== true) $this->mostrarSiguiente = ($convertir == true) ? htmlentities((string)$str, ENT_QUOTES) : (string)$str;
-                else return $this->error(true, "El valor indicado en el mÈtodo mostrarSiguiente() es inv·lido");
+                else return $this->error(true, "El valor indicado en el m√©todo mostrarSiguiente() es inv√°lido");
                 return true;
         }
   
         /**
-        *       Cadena que se mostrar· en el link hacia las p·ginas accesibles en barra de links
+        *       Cadena que se mostrar√° en el link hacia las p√°ginas accesibles en barra de links
         *
-        *       Define la cadena que ser· mostrada en el enlace hacia las p·ginas accesibles 
-        *       desde la barra de links. El n˙mero de p·gina deber· ser indicado como {n}
+        *       Define la cadena que ser√° mostrada en el enlace hacia las p√°ginas accesibles 
+        *       desde la barra de links. El n√∫mero de p√°gina deber√° ser indicado como {n}
         *       @param string $str Cadena a mostrar
         *       @returns void
         *       @version 2.0
@@ -689,7 +689,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         function mostrarAdyacentes ($str, $convertir = false) {
                 if($str === 0 or $str === '0') $this->mostrarAdyacentes = '0';
                 elseif(!empty($str) and $str !== true) $this->mostrarAdyacentes = ($convertir == true) ? htmlentities((string)$str, ENT_QUOTES) : (string)$str;
-                else return $this->error(true, "El valor indicado en el mÈtodo mostrarAdyacentes() es inv·lido");
+                else return $this->error(true, "El valor indicado en el m√©todo mostrarAdyacentes() es inv√°lido");
                 return true;
         }
   
@@ -701,10 +701,10 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         }
   
         /**
-        *       Cadena que se mostrar· en vez del link hacia la p·gina ACTUAL
+        *       Cadena que se mostrar√° en vez del link hacia la p√°gina ACTUAL
         *
-        *       Define la cadena que ser· mostrada como p·gina actual en la barra de links. El 
-        *       n˙mero de p·gina (P·gina actual) deber· ser indicado como {n}
+        *       Define la cadena que ser√° mostrada como p√°gina actual en la barra de links. El 
+        *       n√∫mero de p√°gina (P√°gina actual) deber√° ser indicado como {n}
         *       @param string $str Cadena a mostrar
         *       @returns void
         **/
@@ -712,19 +712,19 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                 if($str === false or $str === null or $str === '') $this->mostrarActual = false;
                 elseif($str === 0 or $str === '0') $this->mostrarActual = (string)'0';
                 elseif(!empty($str) and $str !== true) $this->mostrarActual = ($convertir == true) ? htmlentities((string)$str, ENT_QUOTES) : (string)$str;
-                else return $this->error(true, "El valor indicado en el mÈtodo mostrarActual() es inv·lido");
+                else return $this->error(true, "El valor indicado en el m√©todo mostrarActual() es inv√°lido");
                 return true;
         }
         
         /**
-        *       Cadena que se agregar· al final de cada link
+        *       Cadena que se agregar√° al final de cada link
         *
         *       Agrega una cadena "addon" al final de cada link en la barra de links
-        *       @param string $gr Cadena que ser· aÒadida
+        *       @param string $gr Cadena que ser√° a√±adida
         *       @returns void
         **/
         function linkAgregar ($agr) {
-                if(empty($agr)) return $this->error(true, "El valor indicado en el mÈtodo linkClase() est· vacÌo");
+                if(empty($agr)) return $this->error(true, "El valor indicado en el m√©todo linkClase() est√° vac√≠o");
                 $this->linkAgregar = $agr;
                 return true;
         }
@@ -732,13 +732,13 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         /**
         *       Estilo para los links en barra de links
         *
-        *       Define la clase CSS que ser· aplicada a los links de la barra de links
+        *       Define la clase CSS que ser√° aplicada a los links de la barra de links
         *       @param string $id Clase CSS a aplicar
         *       @returns void
         **/
         function linkClase ($id) {
-                if(empty($id)) return $this->error(true, "El valor indicado en el mÈtodo linkClase() est· vacÌo");
-                if(!ereg("(^[a-zA-Z0-9_ ]+)$",$id) or $id === true) return $this->error(true, "El nombre indicado en el mÈtodo linkClase() es inv·lido");
+                if(empty($id)) return $this->error(true, "El valor indicado en el m√©todo linkClase() est√° vac√≠o");
+                if(!ereg("(^[a-zA-Z0-9_ ]+)$",$id) or $id === true) return $this->error(true, "El nombre indicado en el m√©todo linkClase() es inv√°lido");
                 $this->linkClase = $id;
                 return true;
         }
@@ -748,13 +748,13 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         *
         *       Define un mensaje para el atributo 'title' de los links de la barra de links. El 
         *       mensaje debe ser en formato: XXXX %1$s XXXX %2$s XXXX %3$s XXXX %4$s XXXX. 
-        *   Los caracteres %n$s seran reemplazados en orden seg˙n el n˙mero por:
-        *               - %1$s = N˙mero de p·gina
+        *   Los caracteres %n$s seran reemplazados en orden seg√∫n el n√∫mero por:
+        *               - %1$s = N√∫mero de p√°gina
         *               - %2$s = Primer resultado mostrado
-        *               - %3$s = ⁄ltimo Resultado mostrado
+        *               - %3$s = √öltimo Resultado mostrado
         *               - %4$s = Total de resultados de la BD
-        *               - %5$s = N˙mero total de p·ginas // version 2.0
-        *       @param string $msg Mensaje que ser· incluÌdo en los links
+        *               - %5$s = N√∫mero total de p√°ginas // version 2.0
+        *       @param string $msg Mensaje que ser√° inclu√≠do en los links
         *       @returns void
         **/
         function linkTitulo ($str, $convertir = true) {
@@ -762,16 +762,16 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                 elseif($str === false or $str === null or $str === '') $this->linkTitulo = false;
                 elseif($str === 0 or $str === '0') $this->linkTitulo = (string)'0';
                 elseif(!empty($str)) $this->linkTitulo = ($convertir == true) ? htmlentities((string)$str, ENT_QUOTES) : (string)$str;
-                else return $this->error(true, "El valor indicado en el mÈtodo linkTitulo() est· vacÌo");
+                else return $this->error(true, "El valor indicado en el m√©todo linkTitulo() est√° vac√≠o");
                 return true;
         }
         
         /**
-        *       Estructura de los links en la barra de navegaciÛn
+        *       Estructura de los links en la barra de navegaci√≥n
         *
-        *       Define una estructura para los links en la barra de navegaciÛn, que reemplazar·
-        *       a la estructura predefinida. Esto es ˙til si se usa el Mod Rewrite para reescribir
-        *       las URLs en una forma "amigable". El lugar donde debe ir el n˙mero de p·gina debe ser
+        *       Define una estructura para los links en la barra de navegaci√≥n, que reemplazar√°
+        *       a la estructura predefinida. Esto es √∫til si se usa el Mod Rewrite para reescribir
+        *       las URLs en una forma "amigable". El lugar donde debe ir el n√∫mero de p√°gina debe ser
         *       indicado como %1$s dentro de la estructura
         *       @param string $estructura Estructura de los links
         *       @returns void
@@ -781,17 +781,17 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                 if($estructura === 0 or $estructura === '0') $this->linkEstructura = (string)'0';
                 elseif($estructura === false) $this->linkEstructura = false;
                 elseif(!empty($estructura) and $estructura !== true) $this->linkEstructura = (string)$estructura;
-                else return $this->error(true, "El valor indicado en el mÈtodo linkEstructura() est· vacÌo");
+                else return $this->error(true, "El valor indicado en el m√©todo linkEstructura() est√° vac√≠o");
                 return true;
         }
         
         /**
-        *       Variables que se desea mantener en la URL de los links en la barra de navegaciÛn
+        *       Variables que se desea mantener en la URL de los links en la barra de navegaci√≥n
         *
-        *       Indique quÈ variables desea mantener en la URL al momento de generar los links para
-        *       la barra de navegaciÛn. La variable que propaga el n˙mero de p·gina es incluida siempre y 
-        *       autom·ticamente. Esta funciÛn sÛlo funcionar· si no se ha definido una estructura para los
-        *       links (linkEstructura()) ni se ha hecho uso de la funciÛn (quitarVar()).
+        *       Indique qu√© variables desea mantener en la URL al momento de generar los links para
+        *       la barra de navegaci√≥n. La variable que propaga el n√∫mero de p√°gina es incluida siempre y 
+        *       autom√°ticamente. Esta funci√≥n s√≥lo funcionar√° si no se ha definido una estructura para los
+        *       links (linkEstructura()) ni se ha hecho uso de la funci√≥n (quitarVar()).
         *       @param string $str[, $str[, ...]] Nombres de las variables que se desea mantener
         *       @returns void
         *       @version 2.0
@@ -802,12 +802,12 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         }
         
         /**
-        *       Variables que se desea quitar de la URL de los links en la barra de navegaciÛn
+        *       Variables que se desea quitar de la URL de los links en la barra de navegaci√≥n
         *
-        *       Indique quÈ variables desea quitar de la URL al momento de generar los links para
-        *       la barra de navegaciÛn. La variable que propaga el n˙mero de p·gina no puede ser quitada,
-        *       y se propaga siempre. Esta funciÛn sÛlo funcionar· si no se ha definido una estructura para 
-        *       los links (linkEstructura()) ni se ha hecho uso de la funciÛn (mantenerVar()).
+        *       Indique qu√© variables desea quitar de la URL al momento de generar los links para
+        *       la barra de navegaci√≥n. La variable que propaga el n√∫mero de p√°gina no puede ser quitada,
+        *       y se propaga siempre. Esta funci√≥n s√≥lo funcionar√° si no se ha definido una estructura para 
+        *       los links (linkEstructura()) ni se ha hecho uso de la funci√≥n (mantenerVar()).
         *       @param string $str[, $str[, ...]] Nombres de las variables que se desea quitar
         *       @returns void
         *       @version 2.0
@@ -826,79 +826,79 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         **/
         
         /**
-        *       N˙mero total de p·ginas
+        *       N√∫mero total de p√°ginas
         *
-        *       Devuelve el n˙mero total de p·ginas
+        *       Devuelve el n√∫mero total de p√°ginas
         *       @returns int
         **/
         function numTotalPaginas () {
-                if($this->done != true) return $this->error(true, "No se puede mostrar el n˙mero total de p·ginas pues no se ha realizado ninguna paginaciÛn");
+                if($this->done != true) return $this->error(true, "No se puede mostrar el n√∫mero total de p√°ginas pues no se ha realizado ninguna paginaci√≥n");
                 return $this->numTotalPaginas;
         }
         
         /**
-        *       N˙mero de p·gina actual
+        *       N√∫mero de p√°gina actual
         *
-        *       Devuelve el n˙mero de p·gina actual
+        *       Devuelve el n√∫mero de p√°gina actual
         *       @returns int
         **/
         function numEstaPagina () {
-                if($this->done != true) return $this->error(true, "No se puede mostrar el n˙mero de p·gina actual pues no se ha realizado ninguna paginaciÛn");
+                if($this->done != true) return $this->error(true, "No se puede mostrar el n√∫mero de p√°gina actual pues no se ha realizado ninguna paginaci√≥n");
                 return $this->numEstaPagina;
         }
         
         /**
-        *       N˙mero de primer registro mostrado
+        *       N√∫mero de primer registro mostrado
         *
-        *       Devuelve el n˙mero del primer registro mostrado, en relaciÛn al total de registros
+        *       Devuelve el n√∫mero del primer registro mostrado, en relaci√≥n al total de registros
         *       @returns int
         **/
         function numPrimerRegistro () {
-                if($this->done != true) return $this->error(true, "No se puede mostrar el n˙mero del primer registro mostrado pues no se ha realizado ninguna paginaciÛn");
+                if($this->done != true) return $this->error(true, "No se puede mostrar el n√∫mero del primer registro mostrado pues no se ha realizado ninguna paginaci√≥n");
                 return $this->numPrimerRegistro;
         }
         
         /**
-        *       N˙mero de ˙ltimo registro mostrado
+        *       N√∫mero de √∫ltimo registro mostrado
         *
-        *       Devuelve el n˙mero del ˙ltimo registro mostrado, en relaciÛn al total de registros
+        *       Devuelve el n√∫mero del √∫ltimo registro mostrado, en relaci√≥n al total de registros
         *       @returns int
         **/
         function numUltimoRegistro () {
-                if($this->done != true) return $this->error(true, "No se puede mostrar el n˙mero del ˙ltimo registro mostrado pues no se ha realizado ninguna paginaciÛn");
+                if($this->done != true) return $this->error(true, "No se puede mostrar el n√∫mero del √∫ltimo registro mostrado pues no se ha realizado ninguna paginaci√≥n");
                 return $this->numUltimoRegistro;
         }
         
         /**
-        *       N˙mero de total registros
+        *       N√∫mero de total registros
         *
-        *       Devuelve el n˙mero total de registros encontrados
+        *       Devuelve el n√∫mero total de registros encontrados
         *       @returns int
         **/
         function numTotalRegistros () {
-                if($this->done != true) return $this->error(true, "No se puede generar la barra de navegaciÛn pues no se ha realizado ninguna paginaciÛn");
+                if($this->done != true) return $this->error(true, "No se puede generar la barra de navegaci√≥n pues no se ha realizado ninguna paginaci√≥n");
                 return $this->numTotalRegistros;
         }
         
         /**
-        *       N˙mero de registros mostrados en esta p·gina
+        *       N√∫mero de registros mostrados en esta p√°gina
         *
-        *       Devuelve el n˙mero de registros mostrados en la p·gina actual
+        *       Devuelve el n√∫mero de registros mostrados en la p√°gina actual
         *       @returns int
         **/
         function numRegistrosMostrados () {
-                if($this->done != true) return $this->error(true, "No se puede obtener el n˙mero de registros mostrados en la p·gina actual pues no se ha realizado ninguna paginaciÛn");
+                if($this->done != true) return $this->error(true, "No se puede obtener el n√∫mero de registros mostrados en la p√°gina actual pues no se ha realizado ninguna paginaci√≥n");
                 return $this->numTotalRegistros_actual;
         }
         
         /**
-        *       Obtener los valores de configuraciÛn
+        *       Obtener los valores de configuraci√≥n
         *
-        *       Devuelve un array con los valores de configuraciÛn
+        *       Devuelve un array con los valores de configuraci√≥n
         *       @returns void
         **/
         function superArray () {
-                if($this->done != true) return $this->error(true, "No se puede mostrar la informaciÛn de la paginaciÛn pues no se ha realizado ninguna paginaciÛn");
+                if($this->done != true) return $this->error(true, "No se puede mostrar la informaci√≥n de la paginaci√≥n pues no se ha realizado ninguna paginaci√≥n");
                 return array("numPrimerRegistro"=>$this->numPrimerRegistro, "numUltimoRegistro"=>$this->numUltimoRegistro, "numTotalRegistros"=>$this->numTotalRegistros, "porPagina"=>$this->porPagina, "numRegistrosMostrados"=>$this->numTotalRegistros_actual, "nombreVariable"=>$this->nombreVariable, "linkAgregar"=>$this->linkAgregar, "linkClase"=>$this->linkClase, "linkSeparador"=>$this->linkSeparador, "linkSeparadorEspecial"=>$this->linkSeparadorEspecial, "numEstaPagina"=>$this->numEstaPagina, "numTotalPaginas"=>$this->numTotalPaginas, "paginasAntes"=>$this->paginasAntes, "paginasDespues"=>$this->paginasDespues, "mostrarPrimera"=>$this->mostrarPrimera, "mostrarUltima"=>$this->mostrarUltima, "mostrarAnterior"=>$this->mostrarAnterior, "mostrarSiguiente"=>$this->mostrarSiguiente, "mostrarAdyacentes"=>$this->mostrarAdyacentes, "mostrarActual"=>$this->mostrarActual, "linkEstructura"=>$this->linkEstructura);
         }
         
@@ -909,7 +909,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         *       @returns array
         **/
         function fetchResultado () {
-                if($this->done != true) return $this->error(false, "No se puede mostrar los resultados porque no se ha realizado la paginaciÛn.");
+                if($this->done != true) return $this->error(false, "No se puede mostrar los resultados porque no se ha realizado la paginaci√≥n.");
                 if(is_array($this->ejecutard)) {
                         if(list($key, $row) = each($this->ejecutard)) return $row;
                 } elseif($row = @mysql_fetch_array($this->ejecutard)) {
@@ -919,7 +919,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         }
         
         function fetchTodo () {
-                if($this->done != true) return $this->error(false, "No se puede mostrar los resultados porque no se ha realizado la paginaciÛn.");
+                if($this->done != true) return $this->error(false, "No se puede mostrar los resultados porque no se ha realizado la paginaci√≥n.");
                 if(is_array($this->ejecutard))
                         return (count($this->ejecutard) > 0) ? $this->ejecutard : null;         
                 $r = array();
@@ -936,7 +936,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         *       @returns string
         **/
         function fetchNavegacion () {
-                if($this->done != true) return $this->error(false, "No se puede generar la barra de navegaciÛn pues no se ha realizado ninguna paginaciÛn"); // version 2.0
+                if($this->done != true) return $this->error(false, "No se puede generar la barra de navegaci√≥n pues no se ha realizado ninguna paginaci√≥n"); // version 2.0
                 if(empty($this->linkEstructura)) {
                         $i = array();
                         if(count($this->mantenerURLVar) > 0) define ('MANTENERURLVARS',1); // version 2.0
@@ -1048,7 +1048,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         /**
         *       @access private
         */
-        function check_vars () { // FunciÛn modificada version 2.0
+        function check_vars () { // Funci√≥n modificada version 2.0
                 $modo = $this->modo;
                 $this->modo = 'publicacion';
                 if(!$this->porPagina($this->porPagina)) $this->porPagina = 5;
@@ -1074,7 +1074,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         /**
         *       @access private
         */
-        function do_link ($page, $title = false,$content) { // FunciÛn modificada version 2.0
+        function do_link ($page, $title = false,$content) { // Funci√≥n modificada version 2.0
                 $href = str_replace('{n}', $page, $this->linkEstructura);
                 if(!empty($this->linkAgregar)) $href.= $this->linkAgregar;
                 $estilo = $this->estilo;
@@ -1087,7 +1087,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         */
         function ejecutar () {
                 $this->check_vars();
-                if($this->sql === false and $this->data === false) return $this->error(false, "No se ha definido los datos ni la consulta SQL para realizar la paginaciÛn"); // version 2.0
+                if($this->sql === false and $this->data === false) return $this->error(false, "No se ha definido los datos ni la consulta SQL para realizar la paginaci√≥n"); // version 2.0
                 $vars = $_GET;
                 if($this->verPost == true) $vars = array_merge($vars, $_POST); // version 2.0
                 $numEstaPagina = (isset($vars[$this->nombreVariable]) and is_numeric($vars[$this->nombreVariable]) and $vars[$this->nombreVariable] >= 1) ? intval($vars[$this->nombreVariable]) : 1; // Modificado version 2.0
@@ -1149,7 +1149,7 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
         function error($desarrollo = true, $msg, $query = false, $limit_error = null) {
                 if($this->modo != 'publicacion' and $this->mostre_error == false) {
                         if($this->modo == 'reporte') {
-                                $error = "Hubo un error al intentar ejecutar la paginaciÛn de los resultados. Por favor, comunÌquese con el responsable de este sitio";
+                                $error = "Hubo un error al intentar ejecutar la paginaci√≥n de los resultados. Por favor, comun√≠quese con el responsable de este sitio";
                                 if($desarrollo == true) {
                                         $this->error = $error;
                                         return false;
@@ -1157,10 +1157,10 @@ if(!preg_match("/(^[a-zA-Z0-9]+)$/",$var)) return $this->error(true, "El nombre 
                                 $this->mostre_error = true;
                         } elseif(!empty($query)) {
                                 $error = "Hubo un error ejecutando la consulta<blockquote><code style='color: #00f; font-size: 13px;'>".htmlspecialchars($query)."</code></blockquote>El error devuelto es: <blockquote><code style='color: #080; font-size: 13px;'><strong>$msg</strong></code></blockquote>";
-                                if($limit_error == true) $error.= "El error probablemente se deba a que en la consulta MySQL que usted indicÛ aparentemente ya existÌa una cl·usula LIMIT, la cu·l es aÒadida autom·ticamente por el paginador. M·s informaciÛn en la p·gina web del script.<br /><br />";
-                                $error.= "Si no logra solucionar el problema, envÌe un mensaje a <code>phppaging@phperu.net</code> indicando el error mostrado y la consulta que generÛ el error";
+                                if($limit_error == true) $error.= "El error probablemente se deba a que en la consulta MySQL que usted indic√≥ aparentemente ya exist√≠a una cl√°usula LIMIT, la cu√°l es a√±adida autom√°ticamente por el paginador. M√°s informaci√≥n en la p√°gina web del script.<br /><br />";
+                                $error.= "Si no logra solucionar el problema, env√≠e un mensaje a <code>phppaging@phperu.net</code> indicando el error mostrado y la consulta que gener√≥ el error";
                         } else {
-                                $error = "Hubo un error ejecutando la paginaciÛn. El mensaje devuelto es: <blockquote><code style='color: #080; font-size: 13px;'><strong>$msg</strong></code></blockquote>Si no logra solucionar el problema, envÌe un mensaje a <code>phppaging@phperu.net</code> indicando el error mostrado y la consulta que generÛ el error";
+                                $error = "Hubo un error ejecutando la paginaci√≥n. El mensaje devuelto es: <blockquote><code style='color: #080; font-size: 13px;'><strong>$msg</strong></code></blockquote>Si no logra solucionar el problema, env√≠e un mensaje a <code>phppaging@phperu.net</code> indicando el error mostrado y la consulta que gener√≥ el error";
                         }
                         $p = "<div style='border: 1px solid #666; background-color: #f6f6f6; margin: 5px 10px; padding: 10px 5px;'>";
                         $p.= "<div style='color: #f00; font: 18px Georgia; margin: 0 5px; border-bottom: 1px dotted #f00;'><strong>PHPPaging - Error</strong></div>";
