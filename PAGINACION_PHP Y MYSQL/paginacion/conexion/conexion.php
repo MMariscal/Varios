@@ -1,6 +1,6 @@
 <?php
 
-    mysqli_connect("localhost","root","123456");
-    mysqli_select_db("NTCSerie22");
+    mysql_connect("localhost","user","123456");
+    mysql_select_db("NTCSerie22");
 
 ?>
