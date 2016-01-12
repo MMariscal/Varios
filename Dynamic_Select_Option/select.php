@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="select_style.css">
-        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="../bower_components/jQuery/dist/jquery.js"></script>
         <script type="text/javascript">
 
         function fetch_select(val)
