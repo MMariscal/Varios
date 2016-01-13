@@ -1,5 +1,6 @@
 <?php
-    session_start();
+    session_start('contador');
+
 ?>
 
 
@@ -13,7 +14,9 @@
                 $contador=0;
             }
             $contador++;
-            echo "<a href='contador.php'>Has recargado esta página $contador veces</a>";
+            $_SESSION['contador']=$contador;
+            echo "<a href='contador.php'>Has recargado esta página ".$_SESSION['contador']." veces</a>";
+            var_dump($contador);
         ?>
     </body>
 </html>
