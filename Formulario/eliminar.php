@@ -9,7 +9,7 @@
 	$resultado=$mysqli->query($query);
 
 ?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Eliminar Registro</title>
