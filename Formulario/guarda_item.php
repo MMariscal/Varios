@@ -12,7 +12,7 @@
     $imagen=$_POST['imagen'];
     $otros=$_POST['otros'];
 
-	$query = "INSERT INTO `pieza` (`MODELO`, `MEDIDAS`, `USO`, `SERIE`, `COLOR`,                                `APLICACION`, `ESTILO`, `IMAGEN`, `OTROS`) VALUES ('$modelo', '$medidas', '$uso',                      '$serie', '$color', '$aplicacion', '$estilo', '$imagen', '$otros')";
+	$query = "INSERT INTO `pieza` (`MODELO`, `MEDIDAS`, `USO`, `SERIE`, `COLOR`, 'APLICACION`, `ESTILO`,                                        `IMAGEN`, `OTROS`) VALUES ('$modelo', '$medidas', '$uso', '$serie', '$color',                                '$aplicacion', '$estilo', '$imagen', '$otros')";
 
 	$resultado=$mysqli->query($query);
 
