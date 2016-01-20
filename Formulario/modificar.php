@@ -2,7 +2,7 @@
 
 	require('conexion.php');
 
-	$id=$_GET['idPIEZA'];
+	$idPIEZA=$_GET['idPIEZA'];
 
 	$query="SELECT MODELO, MEDIDAS, USO, SERIE, COLOR, APLICACION, ESTILO, IMAGEN, OTROS FROM PIEZA WHERE idPIEZA='$idPIEZA'";
 
@@ -14,17 +14,17 @@
 
 <html>
 	<head>
-		<title>Usuarios</title>
+		<title>ITEMS</title>
 	</head>
 	<body>
 
-		<center><h1>Modificar Usuario</h1></center>
+		<center><h1>Modificar Item</h1></center>
 
 		<form name="modificar_item" method="POST" action="mod_item.php">
 
 			<table width="50%">
 				<tr>
-					<input type="hidden" name="id" value="<?php echo $id; ?>">
+					<input type="hidden" name="idPIEZA" value="<?php echo $idPIEZA; ?>">
 					<td width="20"><b>MODELO</b></td>
 					<td width="30"><input type="text" name="modelo" size="75" value="<?php echo $row['MODELO']; ?>" /></td>
 				</tr>
