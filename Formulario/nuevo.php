@@ -6,7 +6,7 @@
 
 		<center><h1>Nuevo Item</h1></center>
 
-		<form name="nuevo_registro" method="POST" action="guarda_pieza.php">
+		<form name="nuevo_registro" method="POST" action="guarda_item.php">
 			<table width="50%">
 				<tr>
 					<td width="20"><b>MODELO</b></td>
