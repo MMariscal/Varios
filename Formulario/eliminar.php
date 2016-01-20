@@ -2,9 +2,9 @@
 
 	require('conexion.php');
 
-	$id=$_GET['id'];
+	$idPIEZA=$_GET['idPIEZA'];
 
-	$query="DELETE FROM usuarios WHERE id='$id'";
+	$query="DELETE FROM PIEZA WHERE idPIEZA='$idPIEZA'";
 
 	$resultado=$mysqli->query($query);
 
@@ -12,7 +12,7 @@
 
 <html>
 	<head>
-		<title>Eliminar usuario</title>
+		<title>Eliminar Registro</title>
 	</head>
 
 	<body>
@@ -21,16 +21,16 @@
 				if($resultado>0){
 				?>
 
-				<h1>Usuario Eliminado</h1>
+				<h1>Registro Eliminado</h1>
 
 				<?php 	}else{ ?>
 
-				<h1>Error al Eliminar Usuario</h1>
+				<h1>Error al eliminar el Registro</h1>
 
 			<?php	} ?>
 			<p></p>
 
-			<a href="index.php">Regresar</a>
+			<a href="index.php">Volver atrás</a>
 
 		</center>
 	</body>
