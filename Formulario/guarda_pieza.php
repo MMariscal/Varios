@@ -2,11 +2,17 @@
 
 	require('conexion.php');
 
-	$usuario=$_POST['usuario'];
-	$password=$_POST['password'];
-	$email=$_POST['email'];
+	$modelo=$_POST['modelo'];
+	$medidas=$_POST['medidas'];
+	$uso=$_POST['uso'];
+    $serie=$_POST['serie'];
+    $color=$_POST['color'];
+    $aplicacion=$_POST['aplicacion'];
+    $estilo=$_POST['estilo'];
+    $imagen=$_POST['imagen'];
+    $otros=$_POST['otros'];
 
-	$query="INSERT INTO usuarios (usuario, contrasenia, email) VALUES ('$usuario','$password','$email')";
+	$query="INSERT INTO PIEZA (usuario, contrasenia, email) VALUES ('$usuario','$password','$email')";
 
 	$resultado=$mysqli->query($query);
 
