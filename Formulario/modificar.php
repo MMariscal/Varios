@@ -2,9 +2,9 @@
 
 	require('conexion.php');
 
-	$id=$_GET['id'];
+	$id=$_GET['idPIEZA'];
 
-	$query="SELECT usuario, contrasenia, email FROM usuarios WHERE id='$id'";
+	$query="SELECT MODELO, MEDIDAS, USO, SERIE, COLOR, APLICACION, ESTILO, IMAGEN, OTROS FROM PIEZA WHERE idPIEZA='$idPIEZA'";
 
 	$resultado=$mysqli->query($query);
 
@@ -20,7 +20,7 @@
 
 		<center><h1>Modificar Usuario</h1></center>
 
-		<form name="modificar_usuario" method="POST" action="mod_usuario.php">
+		<form name="modificar_item" method="POST" action="mod_item.php">
 
 			<table width="50%">
 				<tr>
