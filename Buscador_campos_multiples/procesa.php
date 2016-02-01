@@ -31,4 +31,13 @@ echo "<br>";
     $query_consulta = sprintf("SELECT * FROM TABLA WHERE $consulta");
 var_dump($query_consulta);
 echo "<br>";*/
+
+
+    $consulta=$_POST['campo'];
+var_dump($consulta);
+echo "<br>";
+    $porciones=explode(' ', $consulta);
+var_dump($porciones);
+echo "<br>";
+
 ?>
