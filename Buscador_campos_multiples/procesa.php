@@ -1,5 +1,5 @@
 <?php
-    $consulta = '';
+    /*$consulta = '';
     $parametros = '';
     if ($_POST['columna1'] != '') $parametros .= "columna1=" . $_POST['columna1'] .'&';
 var_dump($parametros);
@@ -30,5 +30,5 @@ echo "<br>";
     echo $consulta .'<br><br>';
     $query_consulta = sprintf("SELECT * FROM TABLA WHERE $consulta");
 var_dump($query_consulta);
-echo "<br>";
+echo "<br>";*/
 ?>
