@@ -253,7 +253,7 @@
                                         <tr>
                                             <td>
                                                 <label>Series</label>
-                                                <select name="seri" onchange="" onclick="oculta_productos(); fetch_select(this.value); buscador_lateral_series(this.value); ocultar_paginador();">
+                                                <select name="seri" onchange="buscador_lateral_series(this.value); fetch_select(this.value);" onclick="oculta_productos(); ocultar_paginador();">
                                                     <?php
                                                         $select = mysql_query("SELECT SERIE FROM PIEZA GROUP BY SERIE ORDER BY SERIE ASC");
                                                         while($row = mysql_fetch_array($select)){
