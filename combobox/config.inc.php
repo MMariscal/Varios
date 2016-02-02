@@ -1,8 +1,8 @@
 <?php
     $dbhost="localhost";
     $dbname="combobox";
-    $dbuser="root";
-    $dbpass="";
+    $dbuser="user";
+    $dbpass="123456";
     $db = mysql_connect($dbhost,$dbuser,$dbpass);
 ?>
 
