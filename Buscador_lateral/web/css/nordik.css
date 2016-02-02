@@ -1,0 +1,71 @@
+/* CSS producto - by Lidia */
+
+/* Contenido de la parte de producto */
+.producto{
+	display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		-moz-align-items: stretch;
+		-webkit-align-items: stretch;
+		-ms-align-items: stretch;
+		align-items: stretch;
+		height: auto;
+}
+
+.logo_prod{
+width: auto;
+float:center;
+display: block;
+
+}
+
+.des-imagen{
+height: auto;
+max-width: 100%;
+padding:2%;
+
+}
+
+/* Panel lateral derecha descripción. Ocupa una columna */
+.producto .descripcion{
+	float:right;
+	/*width: calc(33.33333333% - 1.25em);*/
+	display:inline-block;
+	padding-left:10px;
+
+}
+
+.descripcion .texto{
+
+}
+
+/* Slide izquierda de ambientes. Ocupa dos columnas */
+
+.producto .slide_prod{
+	float:left;
+	display:inline-block;
+	width: calc(100% - 1.25em);
+	min-height: 500px;
+
+
+}
+
+/* Sección de despiece. Estilo del enlace, boton descarga de producto, añadir botones de las características técnicas*/
+.despiece{
+
+	display:block;
+	background-color:#FAFAFA;
+
+
+
+	text-align: center;
+}

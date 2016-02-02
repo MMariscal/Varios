@@ -1,0 +1,294 @@
+/* CSS producto - by Lidia */
+
+/* Contenido de la parte de producto */
+.producto{
+	display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		-moz-align-items: stretch;
+		-webkit-align-items: stretch;
+		-ms-align-items: stretch;
+		align-items: stretch;
+		height: auto;
+}
+
+
+
+/* Panel lateral derecha descripción. Ocupa una columna */
+.producto .descripcion{
+	float:right;
+	width: calc(33.33333333% - 1.25em);
+	display:inline-block;
+}
+
+.logo_prod{
+	width: auto;
+	text-align: center;
+	display: block;
+}
+
+.desimagen{
+	height: auto;
+	max-width:68%;
+	display:block;
+	text-align: center;
+
+}
+
+.descripcion .texto{
+	/* se usará si se incluye texto en vez de imagen con descripción*/
+}
+
+.iconos{
+
+	width: 100%;
+	display: block;
+
+}
+
+.iconos img{
+	width: 36px;
+	margin-right: 2%;
+	display:inline-block;
+
+}
+
+.iconos img:last-child {
+	margin-right: 0;
+
+}
+
+/* Slide izquierda de ambientes. Ocupa dos columnas */
+
+.producto .slide_prod{
+	float:left;
+	display:inline-block;
+	width: calc(66.66666666% - 1.25em);
+	min-height: 600px;
+
+}
+
+
+/* Sección de despiece. Estilo del enlace, boton descarga de producto, añadir botones de las características técnicas*/
+.despiece{
+	display:block;
+	background-color:#FAFAFA;
+	width: 100%;
+	min-height: 66.666666%;
+	height: auto;
+	text-align:center;
+	padding:  2% 1%;
+	margin-top: -10px!important;
+	-webkit-box-shadow: 2px 2px 19px 0px rgba(50, 50, 50, 0.23);
+	-moz-box-shadow:    2px 2px 19px 0px rgba(50, 50, 50, 0.23);
+	box-shadow:         2px 2px 19px 0px rgba(50, 50, 50, 0.23);
+
+
+}
+.despiece h2, h1{
+	text-align:left;
+}
+.despiece img{
+
+	margin:0 auto;
+	left:0;
+	right: 0;
+	top:0;
+	bottom: 0;
+
+}
+
+/* Descargar catálogo */
+
+.descbutton{/* div exterior del boton */
+	min-width: 45%;
+	max-width: 70%;
+	background-color: #F6F6F6;
+	height: auto;
+	-webkit-box-shadow: 2px 2px 19px 0px rgba(50, 50, 50, 0.23);
+	-moz-box-shadow:    2px 2px 19px 0px rgba(50, 50, 50, 0.23);
+	box-shadow:         2px 2px 19px 0px rgba(50, 50, 50, 0.23);
+	text-align: center;
+	font-size: 18px;
+	border:solid 1px #b5b5b5;
+	padding:4%;
+	color:red;
+	display:inline-block;
+	line-height: 90%;
+}
+
+.descbutton:hover{
+	background-color: #FFFFFF;
+	border:solid 1px red;
+	color:red;
+}
+
+.descarga {
+	/*display:block;*/
+	vertical-align: middle;
+
+}
+
+.descarga a:focus, .descarga a:hover{
+	color:red;
+}
+
+.thumbdescarga{
+	height: 50px;
+	width: 80px;
+	background-color: red;
+	content:" ";
+	/*display: block;*/
+	float:left;
+	margin-right: 2%;
+	vertical-align: middle;
+
+}
+
+
+
+/* nuevo banner pagina inicio*/
+.bannerpal{
+	display:inline-block;
+	width: 100%;
+	min-height: 500px;
+	max-height: 550px;
+	margin-bottom: 8%;
+
+}
+
+/* CODIGO PARA OPCIÓN MARCOS DE PÁGINA DE SERIE */
+
+.bannermarc{
+	display:block;
+	width: 70%;
+	min-height: 350px;
+	max-height: 550px;
+	margin-bottom: 8%;
+
+}
+
+.despiecemarc{
+	display:block;
+	width: 100%;
+	text-align: center;
+	margin-top: -30px;
+}
+
+.descimagen2{
+		height: auto;
+		max-width: 100%;
+		padding:2%;
+		display:inline-block;
+}
+
+
+.floating-menu {
+	font-family: sans-serif;
+	background-color: white;
+	padding-right: 10px;
+	max-width: 225px;
+	z-index: 100;
+	position: fixed;
+	float:right;
+	text-align: center;
+	border-right: 2px #b5b5b5 solid;
+	margin-right: 10px;
+
+	/* SOMBRA INTERNA PARA FLOTANTE
+
+	-webkit-box-shadow: inset 0px 0px 18px -5px rgba(0,0,0,0.79);
+	-moz-box-shadow: inset 0px 0px 18px -5px rgba(0,0,0,0.79);
+	box-shadow: inset 0px 0px 18px -5px rgba(0,0,0,0.79);*/
+
+}
+
+.floating-menu a,
+.floating-menu h3 {
+	font-size: 0.9em;
+	display: block;
+	margin: 0 0.5em;
+	color: grey;
+}
+
+.logo_prod_marc{
+	max-width: 200px;
+	height: auto;
+	display: block;
+	margin-bottom: 20px;
+}
+
+/* iconos descripción de productos */
+.iconosmarc{
+	width: 100%;
+	display: block;
+	text-align: left;
+}
+
+.iconosmarc img{
+	width: 36px;
+	padding: 2px;
+	display:inline-block;
+}
+
+
+
+
+/* Botón volver */
+.botonvolver{
+	margin:1px;
+	display: block;
+	height: auto;
+	text-align: right;
+	font-size: 14px;
+	margin-top: 3%;
+}
+
+.botonvolver a:hover, .botonvolver a:active{
+	color:red;
+	text-shadow: 0px 0px 8px rgba(150, 150, 150, 0.82);
+}
+
+
+/* Descargar catálogo */
+
+.descbutton2{ /* div exterior del boton */
+	min-width: 60%;
+	max-width: 100%;
+	background-color: #FAFAFA;
+	height: auto;
+	text-align: center;
+	font-size: 16px;
+	padding:4%;
+	display:block;
+	border: #BDBDBD 1px solid;
+
+
+}
+
+.descbutton2:hover{
+	background-color: #FFFFFF;
+
+}
+
+.descarga2, .descarga2 a{
+	line-height: 95%;
+	vertical-align: middle;
+	color:#585858;
+
+}
+
+.descarga2 a:focus, .descarga2 a:hover{
+	color:red;
+}
+
+

@@ -1,0 +1,308 @@
+/* BUSCAR.CSS POR MARCOS MARISCAL */
+/* CSS PARA EFECTOS DE BÚSQUEDA */
+
+/* ESTILO PARA LA PRESENTACIÓN DE LOS PRODUCTOS EN BUSCAR.PHP */
+
+table {
+    font-family: 'trebuchet MS', 'Lucida sans', Arial;
+    font-size: 14px;
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc;
+    -moz-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.bordered th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+
+/* ESTILO EFECTOS PRESENTACIÓN IMÁGENES EN BÚSQUEDA */
+
+/*Estilos Base*/
+.contenedor-img {
+    width: auto;
+    height: auto;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    background: #fff;
+}
+
+.contenedor-img .mascara,.contenedor-img .contenido {
+    width: auto;
+    height: auto;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+
+.contenedor-img img {
+    display: block;
+    position: relative;
+
+}
+
+.contenedor-img h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    margin: 20px 0 0 0
+}
+
+.contenedor-img p {
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 10px;
+    text-align: center
+}
+
+.contenedor-img a.link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px 14px;
+    background: #222;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000
+}
+
+.contenedor-img a.link:hover {
+    box-shadow: 0 0 5px #000
+}
+
+/*Efecto*/
+
+.efecto img {
+    transition: all 0.2s linear;
+}
+
+.efecto .mascara {
+    opacity: 0;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.efecto h2 {
+    transform: translateX(-200px);/*Desplazamos a la izquierda*/
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+.efecto p {
+    transform: translateX(200px);/*Desplazamos a la derecha*/
+    opacity: 0;
+    transition: all 0.4s linear;
+}
+
+.efecto a.link{
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: translateY(100px)/*Desplazamos para abajo*/
+}
+
+.efecto:hover img {
+    transform: scale(1.1);/*Damos un ligero zoom a la imagen*/
+}
+
+.efecto:hover .mascara {
+    opacity: 1;
+}
+
+.efecto:hover h2,
+.efecto:hover p,
+.efecto:hover a.link {
+    opacity: 1;
+    transform: translateX(0px);/*Regresamos a las posiciones originales*/
+}
+
+.efecto:hover p {
+    transition-delay: 0.1s;
+}
+
+.efecto:hover a.link {
+    transition-delay: 0.2s; /*Aplicamos un pequeño retardo para que se muestre al final*/
+    transform: translateY(-15px);
+}
+
+/* LIGHTBOX EFFECT */
+
+.fadebox {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+}
+
+.overbox {
+    display: none;
+    position: absolute;
+    margin-left: 25%;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    z-index: 1002;
+    overflow: auto;
+}
+
+#sobreoverbox{
+    background-color: whitesmoke;
+}
+
+
+
+/*RESULTADOS DE LA BÚSQUEDA (BUSCAR.PHP)*/
+/* MARCOS, 29/12/2015 */
+
+.querymenus{
+	width: 100%;
+	height: 100%;
+	text-align: justify;
+	display: block;
+}
+
+#resultadoquery{
+	display: inline;
+}
+
+#menuslaterales{
+	width: calc(33% - 1.25em);
+	font-size: 13px;
+	line-height: 133%;
+	display: inline-block;
+	visibility: visible;
+}
+
+#resultadosbusqueda{
+	width: 66%;
+	height: auto;
+	float: right;
+	display: inline-block;
+	background-color: none;
+	visibility: visible;
+}
+
+/* CAMBIADO POR MMR 02/02/16 DE WIDTH 33% A 31% Y MARGIN-RIGHT */
+.autogenerado{
+    width: 31%;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+/* 02/02/16 MMR */
+/* AÑADIR ELEMENTO NTH-CHILD PARA ELEMENTOS AUTOGENERADOS (QUITAR MARGEN) */
+.autogenerado:last-child{
+    margin-right: 0;
+}
+
+#volver{
+    width: auto;
+    float: right;
+    margin-right: auto;
+}
+
+/* RESULTADOS PAGINACIÓN */
+/* 14/01/16 MMR */
+
+#paginacion{
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* MENÚS LATERALES DE OPCIONES */
+/* 15-01-16 MMR*/
+
+#menu_busca_series{
+    display: block;
+}
+
+#menu_busca_productos{
+    display: none;
+}

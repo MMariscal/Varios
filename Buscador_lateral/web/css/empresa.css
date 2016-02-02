@@ -1,0 +1,101 @@
+/* EMPRESA.CSS POR MARCOS */
+/* 17-12-2015 */
+
+.desplegables{
+	width: 100%;
+	height: 100%;
+	/* background-color: beige; */
+	text-align: justify;
+	display: block;
+}
+
+#historia2{
+	/* background: url("../images/presentacion/historia.png") right top no-repeat; */
+	/* background-color: beige; */
+	display: inline;
+}
+
+#texto{
+	width: calc(33% - 1.25em);
+	font-size: 13px;
+	line-height: 133%;
+	display: inline-block;
+	visibility: visible;
+}
+
+#texto2{
+	width: calc(33% - 1.25em);
+	font-size: 13px;
+	line-height: 133%;
+	display: inline-block;
+	visibility: visible;
+}
+
+#imagen{
+	width: 66%;
+	height: auto;
+	float: right;
+	display: inline-block;
+	background-color: black;
+	visibility: visible;
+}
+
+#imagen2{
+	width: 66%;
+	height: auto;
+	float: right;
+	display: inline-block;
+	background-color: transparent;
+	visibility: visible;
+    background-image: url('../images/imagenes/imagen-reconocimientos.jpg');
+    background-origin: content-box;
+    background-size: 100%;
+}
+
+#premios{
+	margin-top: 25px;
+	width: 100%;
+	height: 100%;
+	background-color: none;
+	display: none;
+	visibility: visible;
+}
+
+#reconocimientos2{
+	display: none;
+}
+
+.alfaoro{
+	width: calc(33% - 1.25em);
+	font-size: 13px;
+	line-height: 133%;
+	display: inline-block;
+	visibility: visible;
+	margin-bottom: 15px;
+	float: right;
+
+}
+
+.premioparrafo{
+	padding-top: 15px;
+	padding-left: 115px;
+	text-align: justify;
+}
+
+/* Content Boxes
+———————————————————— */
+.content-box-blue,
+.content-box-gray,
+.content-box-green,
+.content-box-purple,
+.content-box-red,
+.content-box-yellow {
+margin: 0 0 25px;
+overflow: hidden;
+padding: 20px;
+}
+
+.content-box-green {
+background-color: #d9edc2;
+border: 1px solid #b2ce96;
+}
