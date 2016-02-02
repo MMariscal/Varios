@@ -244,7 +244,7 @@
                                         <tr>
                                             <td>
                                                 <label>Productos</label>
-                                                <select name="prod" onchange="fetch_select_producto(this.value);" onclick="oculta_series(); fetch_select_producto(this.value); ocultar_paginador();">
+                                                <select name="prod" onchange="fetch_select_producto(this.value);" onclick="oculta_series(); ocultar_paginador();">
                                                     <option value="USO">USO</option>
                                                     <option value="APLICACION">APLICACIÓN</option>
                                                 </select>
