@@ -6,10 +6,10 @@
     */
 
     // Variables para los campos de texto
-    $nombre = strip_tags($_POST["first_name"]);
-    $apellidos = strip_tags($_POST["last_name"]);
-    $mail = strip_tags($_POST["email"]);
-    $mensaje = strip_tags($_POST["comments"]);
+    $nombre = strip_tags($_POST['first_name']);
+    $apellidos = strip_tags($_POST['last_name']);
+    $mail = strip_tags($_POST['email']);
+    $mensaje = strip_tags($_POST['comments']);
 
     // Variables para los datos del archivo adjunto
     $nameFile = $_FILES['archivo']['name'];
@@ -37,7 +37,7 @@
     $cuerpo .= "Content-Transfer-Encoding: 8bit\r\n";
     $cuerpo .= "\r\n"; // línea vacía
     $cuerpo .= "Correo enviado por: " .$nombre. " " .$apellidos;
-    $cuerpo .= "con fecha: " .$fechaFormato. "\r\n";
+    $cuerpo .= " con fecha: " .$fechaFormato. "\r\n";
     $cuerpo .= "Email: " .$mail. "\r\n";
     $cuerpo .= "\r\n"; // línea vacía
 
