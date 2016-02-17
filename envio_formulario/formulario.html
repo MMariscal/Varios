@@ -49,7 +49,7 @@
             ga('create', 'UA-XXXXXXXX-X', 'auto');
             ga('send', 'pageview');
         </script>
-        <form name="frmContacto" method="post" action="sendbymail.php">
+        <form action="archivo_adjunto.php" name="frmContacto" method="post" enctype="multipart/form-data">
             <table width="500px">
                 <tr>
                     <td><label for="first_name">Nombre: *</label></td>
@@ -70,6 +70,9 @@
                 <tr>
                     <td><label for="comments">Comentarios: *</label></td>
                     <td><textarea name="comments" maxlength="500" cols="30" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="file" name="archivo"></td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align:right"><input type="submit" value="Enviar"></td>
